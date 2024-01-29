@@ -41,7 +41,7 @@ public class EmployeeController {
 //         .orElse(null);
 // }
 
-@GetMapping("/employess/{id}")
+@GetMapping("/{id}")
 public ResponseEntity<Employee> findEmployeeById(@PathVariable Long id) {
     Optional<Employee> employeeOptional = repository.findById(id);
 

@@ -18,7 +18,6 @@ public class Employee {
     }
 
 
-
 public Long getId() {
     return id;
 }
@@ -39,7 +38,7 @@ public String getJobTitle() {
     return jobTitle;
 }
 
-public void setJobtitle(String newJobTitle) {
+public void setJobTitle(String newJobTitle) {
     this.jobTitle = newJobTitle; 
 }
 
