@@ -58,6 +58,7 @@ public boolean getTrainingComplete() {
 public void setTrainingComplete(boolean newTrainingComplete) {
     this.trainingComplete = newTrainingComplete; 
 }
+
 }
 
 // keys: name, id, job title, salary, training complete, 

@@ -1,6 +1,9 @@
 package com.cbfacademy.apiassessment.employee;
-import org.springframework.data.repository.ListCrudRepository; 
 
-public interface EmployeeRepository extends ListCrudRepository<Employee, Long> {
+import org.yaml.snakeyaml.events.Event.ID;
+
+public interface EmployeeRepository extends Repository<Employee, ID> {
+
     
+
 }
