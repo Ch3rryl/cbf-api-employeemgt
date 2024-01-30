@@ -3,23 +3,19 @@ package com.cbfacademy.apiassessment.employee;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Repository;
+import com.cbfacademy.apiassessment.core.RepositoryA;
 
-@Repository
-@Primary
-public interface EmployeeRepository extends Repository {
 
-        List<Employee> findAll();
+public interface EmployeeRepository extends RepositoryA<Employee, Long>  {
 
-        Optional<Employee> findById(Long id);
+    List<Employee> findAll();
 
-        Employee createEmployee(Employee employee);
+    Optional<Employee> findById(Long id);
 
-        Employee updateEmployee(Employee employee);
+    Employee createEmployee(Employee employee);
 
-        Employee deleteEmployee(Employee employee);
-    
+    Employee updateEmployee(Employee employee);
+
+    void deleteEmployee(Long id);
+
 }
-
-// <Employee, ID> 

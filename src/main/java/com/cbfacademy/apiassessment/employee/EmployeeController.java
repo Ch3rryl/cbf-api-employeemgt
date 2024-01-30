@@ -31,27 +31,20 @@ public class EmployeeController {
 // find all employees
     @GetMapping("/employees")
     List<Employee> findAll() {
-    return repository.findAll();
-
+         return repository.findAll();
     }
-// find employee by id
-//     @GetMapping("/employees/{id}")
-//     Employee findEmployeebyId(@PathVariable Long id) {
-//         return repository.findById(id)
-//         .orElse(null);
-// }
 
-@GetMapping("/{id}")
-public ResponseEntity<Employee> findEmployeeById(@PathVariable Long id) {
-    Optional<Employee> employeeOptional = repository.findById(id);
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> findEmployeeById(@PathVariable Long id) {
+        Optional<Employee> employeeOptional = repository.findById(id);
 
-    if (employeeOptional.isPresent()) {
-        Employee employee = employeeOptional.get();
-        return new ResponseEntity<>(employee, HttpStatus.OK);
-    } else {
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        if (employeeOptional.isPresent()) {
+            Employee employee = employeeOptional.get();
+            return new ResponseEntity<>(employee, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
-}
 
 // create / post new employee details
     @PostMapping("/employees")
