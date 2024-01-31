@@ -1,5 +1,4 @@
-{
-    "employees": [
+    [
       {
         "name": "John Doe",
         "id": 101,
@@ -211,4 +210,4 @@
         "training_complete": "yes"
       }
     ]
-  }
+  

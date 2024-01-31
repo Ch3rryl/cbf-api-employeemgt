@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/api")
 public class EmployeeController {
 
     private final EmployeeRepository repository; 
@@ -62,9 +62,9 @@ public class EmployeeController {
 
 // delete employee BY id
     @DeleteMapping("/{id}")
-    public ResponseEntity<Employee> deleteEmployee(@PathVariable Long id, @RequestBody Employee employee) {
-    Employee deleteEmployee = repository.deleteEmployee(employee);
-    return new ResponseEntity<>(deleteEmployee, HttpStatus.OK); 
+    public ResponseEntity<String> deleteEmployee(@PathVariable Long id) {
+    repository.deleteEmployee(id);
+    return new ResponseEntity<String>("Ok", HttpStatus.OK); 
 }
 
 }
