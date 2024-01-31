@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
@@ -22,7 +23,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 public class JSONRepository implements EmployeeRepository {
     private final String filePath;
     private final ObjectMapper objectMapper;
-    private final Map<Long, Employee> database;
+    private final Map<UUID, Employee> database;
 
     // using Jackson
 
@@ -33,19 +34,18 @@ public class JSONRepository implements EmployeeRepository {
         database = loadDataFromJson();
     }
 
-    // Exception handling - try catch on filePath - throws IOException when an input
-    // or output fails.
+    // Exception handling - try catch on filePath - throws IOException when an input or output fails.
 
     // Read JSON data
-    private Map<Long, Employee> loadDataFromJson() {
+    private Map<UUID, Employee> loadDataFromJson() {
         try {
             System.out.println(filePath);  // ouput: src/main/resources/data/data.json
-            File file = new File(filePath);
-            System.out.println(file.exists());  // ouput: false
-            // File file = new File("src/main/resources/data/data.json");  // this works
+            // File file = new File(filePath);
+            // System.out.println(file.exists());  // ouput: false
+            File file = new File("src/main/resources/data/data.json");  // this works
             
             if (file.exists()) {                
-                return objectMapper.readValue(file, new TypeReference<Map<Long, Employee>>() {
+                return objectMapper.readValue(file, new TypeReference<Map<UUID, Employee>>() {
                 });
             }
 
@@ -63,8 +63,7 @@ public class JSONRepository implements EmployeeRepository {
             objectMapper.writeValue(new File(filePath), database);
 
         } catch (IOException e) {
-            // printstacktrace is a throwable class that prints error along with exact
-            // location / class name
+            // printstacktrace is a throwable class that prints error along with exact location / class name
             e.printStackTrace();
         }
     }
@@ -81,7 +80,7 @@ public class JSONRepository implements EmployeeRepository {
 
     // find by id implementation
     @Override
-    public Optional<Employee> findById(Long id) {
+    public Optional<Employee> findById(UUID id) {
         return Optional.ofNullable(database.get(id));
     }
 
@@ -97,7 +96,7 @@ public class JSONRepository implements EmployeeRepository {
     // update employee implementation
     @Override
     public Employee updateEmployee(Employee updatedEmployee) {
-        Long id = updatedEmployee.getId();
+        UUID id = updatedEmployee.getId();
         return findById(id)
                 .map(existingEmployee -> {
                     existingEmployee.setName(updatedEmployee.getName());
@@ -112,22 +111,19 @@ public class JSONRepository implements EmployeeRepository {
 
     // delete implementation
     @Override
-    public void deleteEmployee(Long id) {
+    public void deleteEmployee(UUID id) {
         database.remove(id);
         saveDataToJson();
     }
 
+    // // search employee by name
+    // @Override
+    // public List<Employee> searchByEmployeeName(String name) {
+    //     return database.values().stream()
+    //             .filter(employee -> employee.getName().equals(name))
+    //             .collect(Collectors.toList());
+    // }
+
 }
 
-// @Override
-// public String value() {
-// // TODO Auto-generated method stub
-// throw new UnsupportedOperationException("Unimplemented method 'value'");
-// }
 
-// @Override
-// public Class<? extends Annotation> annotationType() {
-// // TODO Auto-generated method stub
-// throw new UnsupportedOperationException("Unimplemented method
-// 'annotationType'");
-// }
