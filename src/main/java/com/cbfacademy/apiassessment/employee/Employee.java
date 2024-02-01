@@ -1,10 +1,8 @@
 package com.cbfacademy.apiassessment.employee;
 
-import java.util.UUID;
-
 public class Employee {
 
-    final UUID id;
+    // final UUID id;
     private String name;
     private String jobTitle;
     private double salary; 
@@ -12,7 +10,7 @@ public class Employee {
 
 
     public Employee() {
-        this.id = UUID.randomUUID();
+        // this.id = UUID.randomUUID();
     }
 
     public Employee(String name, String jobTitle, double salary, Boolean trainingComplete) {
@@ -21,13 +19,13 @@ public class Employee {
         this.jobTitle = jobTitle;
         this.salary = salary;
         this.trainingComplete = trainingComplete;
-        this.id = UUID.randomUUID(); 
+        // this.id = UUID.randomUUID(); 
     }
 
 
-public UUID getId() {
-    return id;
-}
+// public UUID getId() {
+//     return id;
+// }
 
 public String getName() {
     return name; 

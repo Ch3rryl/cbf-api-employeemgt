@@ -61,6 +61,8 @@ public class EmployeeController {
     // }
 
 
+
+
     // create / post new employee details
     @PostMapping("/employees")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
@@ -70,8 +72,8 @@ public class EmployeeController {
 
     // update employee details
     @PutMapping("/employees/{id}")
-    public ResponseEntity<Employee> updateEmployeeDetails(@RequestBody Employee employee) {
-    Employee updatedEmployee = repository.updateEmployee(employee);
+    public ResponseEntity<Employee> updateEmployeeDetails(@PathVariable UUID id, @RequestBody Employee employee) {
+    Employee updatedEmployee = repository.updateEmployee(id, employee);
     return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
 }
 

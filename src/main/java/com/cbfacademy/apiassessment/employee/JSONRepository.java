@@ -87,7 +87,8 @@ public class JSONRepository implements EmployeeRepository {
     // create employee implementation
     @Override
     public Employee createEmployee(Employee employee) {
-        database.put(employee.getId(), employee);
+        UUID id = UUID.randomUUID(); 
+        database.put(id, employee);
         saveDataToJson();
 
         return employee;
@@ -95,8 +96,8 @@ public class JSONRepository implements EmployeeRepository {
 
     // update employee implementation
     @Override
-    public Employee updateEmployee(Employee updatedEmployee) {
-        UUID id = updatedEmployee.getId();
+    public Employee updateEmployee(UUID id, Employee updatedEmployee) {
+        // UUID id = updatedEmployee.getId();
         return findById(id)
                 .map(existingEmployee -> {
                     existingEmployee.setName(updatedEmployee.getName());

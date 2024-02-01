@@ -17,7 +17,7 @@ public interface EmployeeRepository extends RepositoryA<Employee, UUID>  {
 
     Employee createEmployee(Employee employee);
 
-    Employee updateEmployee(Employee employee);
+    Employee updateEmployee(UUID id, Employee employee);
 
     void deleteEmployee(UUID id);
     
