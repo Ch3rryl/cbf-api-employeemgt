@@ -23,4 +23,6 @@ public interface EmployeeRepository extends RepositoryA<Employee, UUID>  {
     
     List<Employee> searchByEmployeeName(String name); 
 
+    List<Employee> searchByJobTitle(String jobTitle); 
+
 }

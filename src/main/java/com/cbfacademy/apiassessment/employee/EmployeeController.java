@@ -50,21 +50,27 @@ public class EmployeeController {
     public ResponseEntity<Employee> searchByEmployeeName(@PathVariable String name) {
         List<Employee> namedEmployee = repository.searchByEmployeeName(name);
 
-        // search by partial match
-        Employee employee = namedEmployee.stream()
-        .filter(e -> e.getName().toLowerCase().contains(name.toLowerCase()))
-        .findFirst()
-        .orElse(null);
-
-        if (employee !=null) {
-
-        // if (!namedEmployee.isEmpty()) {
-        //     Employee employee = namedEmployee.get(0); // first employee if multiple
+        if (!namedEmployee.isEmpty()) {
+            Employee employee = namedEmployee.get(0); // first employee if multiple
             return new ResponseEntity<>(employee, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/employees/jobtitle/{jobTitle}")
+    public ResponseEntity<Employee> searchByJobtitle(@PathVariable String jobTitle) {
+        List<Employee> jobTtitleSearched = repository.searchByJobTitle(jobTitle);
+
+        if (!jobTtitleSearched.isEmpty()) {
+            Employee employee = jobTtitleSearched.get(0);
+            return new ResponseEntity<>(employee, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+    }
+
 
     // create / post new employee details
     @PostMapping("/employees")

@@ -122,7 +122,17 @@ public class JSONRepository implements EmployeeRepository {
     @Override
     public List<Employee> searchByEmployeeName(String name) {
         return database.values().stream()
-                .filter(employee -> employee.getName().equals(name))
+                // .contains enables partial name search
+                .filter(employee -> employee.getName().toLowerCase().contains(name.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    // search by job title
+    @Override
+    public List<Employee> searchByJobTitle(String jobTitle) {
+        return database.values().stream()
+                // .contains enables partial search of job title
+                .filter(employee -> employee.getJobTitle().toLowerCase().contains(jobTitle.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
