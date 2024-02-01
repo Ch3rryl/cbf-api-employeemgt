@@ -60,5 +60,3 @@ public void setTrainingComplete(boolean newTrainingComplete) {
 }
 
 }
-
-// keys: name, id, job title, salary, training complete, 

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
@@ -117,12 +118,12 @@ public class JSONRepository implements EmployeeRepository {
         saveDataToJson();
     }
 
-    // // search employee by name
-    // @Override
-    // public List<Employee> searchByEmployeeName(String name) {
-    //     return database.values().stream()
-    //             .filter(employee -> employee.getName().equals(name))
-    //             .collect(Collectors.toList());
-    // }
+    // search employee by name
+    @Override
+    public List<Employee> searchByEmployeeName(String name) {
+        return database.values().stream()
+                .filter(employee -> employee.getName().equals(name))
+                .collect(Collectors.toList());
+    }
 
 }

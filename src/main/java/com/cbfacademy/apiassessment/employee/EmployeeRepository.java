@@ -21,6 +21,6 @@ public interface EmployeeRepository extends RepositoryA<Employee, UUID>  {
 
     void deleteEmployee(UUID id);
     
-    // List<Employee> searchByEmployeeName(String name); 
+    List<Employee> searchByEmployeeName(String name); 
 
 }
