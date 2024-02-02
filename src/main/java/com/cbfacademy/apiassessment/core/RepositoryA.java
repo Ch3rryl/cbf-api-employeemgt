@@ -1,12 +1,12 @@
 package com.cbfacademy.apiassessment.core;
 
-public interface RepositoryA<T, ID> {
+import java.io.Serializable;
 
-        // Optional<T> findById(ID id);
+import org.springframework.stereotype.Repository;
 
-        // T save(T entity);  
+@Repository
+public interface RepositoryA<T, ID extends Serializable> {
 
-        // void deleteById(ID id);  
 
 }
 

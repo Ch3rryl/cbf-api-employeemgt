@@ -2,62 +2,56 @@ package com.cbfacademy.apiassessment.employee;
 
 public class Employee {
 
-    private Long id; 
+    // final UUID id;
     private String name;
     private String jobTitle;
     private double salary; 
     private Boolean trainingComplete;
 
-    public Employee(Long id, String name, String jobTitle, double salary, Boolean trainingComplete) {
 
-        this.id = id;
+    public Employee() {
+      
+    }
+
+    public Employee(String name, String jobTitle, double salary, Boolean trainingComplete) {
+
         this.name = name;
         this.jobTitle = jobTitle;
         this.salary = salary;
         this.trainingComplete = trainingComplete;
+       
     }
 
+    public String getName() {
+        return name; 
+    }
 
-public Long getId() {
-    return id;
-}
+    public void setName(String newName) {
+        this.name = newName;
+    }
 
-public void setId(Long newId) {
-    this.id = newId;
-}
+    public String getJobTitle() {
+        return jobTitle;
+    }
 
-public String getName() {
-    return name; 
-}
+    public void setJobTitle(String newJobTitle) {
+        this.jobTitle = newJobTitle; 
+    }
 
-public void setName(String newName) {
-    this.name = newName;
-}
+    public double getSalary() {
+        return salary;
+    }
 
-public String getJobTitle() {
-    return jobTitle;
-}
+    public void setSalary(double newSalary) {
+        this.salary = newSalary;
+    }
 
-public void setJobTitle(String newJobTitle) {
-    this.jobTitle = newJobTitle; 
-}
+    public boolean getTrainingComplete() {
+        return trainingComplete;
+    }
 
-public double getSalary() {
-    return salary;
-}
-
-public void setSalary(double newSalary) {
-    this.salary = newSalary;
-}
-
-public boolean getTrainingComplete() {
-    return trainingComplete;
-}
-
-public void setTrainingComplete(boolean newTrainingComplete) {
-    this.trainingComplete = newTrainingComplete; 
-}
+    public void setTrainingComplete(boolean newTrainingComplete) {
+        this.trainingComplete = newTrainingComplete; 
+    }
 
 }
-
-// keys: name, id, job title, salary, training complete, 
