@@ -10,7 +10,7 @@ public class Employee {
 
 
     public Employee() {
-        // this.id = UUID.randomUUID();
+      
     }
 
     public Employee(String name, String jobTitle, double salary, Boolean trainingComplete) {
@@ -19,44 +19,39 @@ public class Employee {
         this.jobTitle = jobTitle;
         this.salary = salary;
         this.trainingComplete = trainingComplete;
-        // this.id = UUID.randomUUID(); 
+       
     }
 
+    public String getName() {
+        return name; 
+    }
 
-// public UUID getId() {
-//     return id;
-// }
+    public void setName(String newName) {
+        this.name = newName;
+    }
 
-public String getName() {
-    return name; 
-}
+    public String getJobTitle() {
+        return jobTitle;
+    }
 
-public void setName(String newName) {
-    this.name = newName;
-}
+    public void setJobTitle(String newJobTitle) {
+        this.jobTitle = newJobTitle; 
+    }
 
-public String getJobTitle() {
-    return jobTitle;
-}
+    public double getSalary() {
+        return salary;
+    }
 
-public void setJobTitle(String newJobTitle) {
-    this.jobTitle = newJobTitle; 
-}
+    public void setSalary(double newSalary) {
+        this.salary = newSalary;
+    }
 
-public double getSalary() {
-    return salary;
-}
+    public boolean getTrainingComplete() {
+        return trainingComplete;
+    }
 
-public void setSalary(double newSalary) {
-    this.salary = newSalary;
-}
-
-public boolean getTrainingComplete() {
-    return trainingComplete;
-}
-
-public void setTrainingComplete(boolean newTrainingComplete) {
-    this.trainingComplete = newTrainingComplete; 
-}
+    public void setTrainingComplete(boolean newTrainingComplete) {
+        this.trainingComplete = newTrainingComplete; 
+    }
 
 }

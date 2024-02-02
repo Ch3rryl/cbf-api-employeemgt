@@ -41,9 +41,8 @@ public class JSONRepository implements EmployeeRepository {
     private Map<UUID, Employee> loadDataFromJson() {
         try {
             System.out.println(filePath);  // ouput: src/main/resources/data/data.json
-            // File file = new File(filePath);
-            // System.out.println(file.exists());  // ouput: false
-            File file = new File("src/main/resources/data/data.json");  // this works
+            
+            File file = new File("src/main/resources/data/data.json"); 
             
             if (file.exists()) {                
                 return objectMapper.readValue(file, new TypeReference<Map<UUID, Employee>>() {
@@ -64,7 +63,7 @@ public class JSONRepository implements EmployeeRepository {
             objectMapper.writeValue(new File(filePath), database);
 
         } catch (IOException e) {
-            // printstacktrace is a throwable class that prints error along with exact location / class name
+            // throwable class that prints error along with exact location / class name
             e.printStackTrace();
         }
     }

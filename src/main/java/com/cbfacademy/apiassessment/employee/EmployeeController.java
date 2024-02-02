@@ -27,7 +27,6 @@ public class EmployeeController {
         this.repository = repository;
     }
 
-
     // find all employees
     @GetMapping("/employees")
     List<Employee> findAll() {
@@ -70,7 +69,6 @@ public class EmployeeController {
         }
 
     }
-
 
     // create / post new employee details
     @PostMapping("/employees")
