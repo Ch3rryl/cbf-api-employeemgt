@@ -218,7 +218,23 @@ mvnw.cmd clean test
 
 ### Test Results
 
-Your should receive confirmation similar to below (depending on your IDE) once all tests pass:
+The tests have passed when you receive the following report:
+
+```sh
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.cbfacademy.apiassessment.employee.EmployeeTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.034 s
+[INFO] Finished at: 2024-02-08T18:51:58Z
+[INFO] ------------------------------------------------------------------------
+```
+You should also receive Spring boot confirmation similar to below (depending on your IDE):
 
 <div>
     <img src="src/Images/test-class.png">
