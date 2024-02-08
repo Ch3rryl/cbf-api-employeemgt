@@ -21,6 +21,8 @@
 
 
 <!-- TABLE OF CONTENTS -->
+
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -28,55 +30,42 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li>Java</li>
-        <li>Spring boot</li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <p>Ensure you have the following installed:</p>   
-
-            1. [JDK 17](https://learn.microsoft.com/en-gb/java/openjdk/download#openjdk-17) (or higher)
-            2. [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-            3. [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
-
-  
-
         <li><a href="#installation">Installation</a></li>
-      </ul>
+    <li>
+        <a href="#usage">Usage</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+     
+
   </ol>
 </details>
+
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The Employee Management API is a Java/Spring Boot application designed to facilitate the management of employee data. This project provides a robust backend infrastructure for handling CRUD (Create, Read, Update, Delete) operations on employee records stored in a JSON file. It leverages the Spring framework for dependency injection and RESTful web service development.
+The Employee Management API is a Java/Spring Boot application designed to facilitate the management of employee data. This project provides a robust backend infrastructure for handling CRUD (Create, Read, Update, Delete) operations on employee records stored in a JSON file. It leverages the Spring framework for dependency injection and RESTful web service development. 
 
 ###  Features
 
+<ul>
 <li><b>JSON Repository:</b> Implements an employee repository using JSON file storage, allowing for seamless data persistence.</li>
 <li><b>CRUD Operations:</b> Supports Create, Read, Update, and Delete operations on employee records, providing flexibility in managing employee data.</li>
 <li><b>Search Functionality:</b> Enables searching for employees by name or job title, enhancing usability and efficiency in retrieving relevant employee information.</li>
 <li><b>Exception Handling:</b> Incorporates exception handling to gracefully manage errors and ensure the reliability of the application, enhancing its robustness.</li>
+</ul>
 
-
-
-
-
+<br>
 <div align="center">
   <a href="https://github.com/Ch3rryl/cbf-api-employeemgt">
-    <img src="src/Images/swagger-view.png"  alt="swagger-board" min-width="700">
+    <img src="src/Images/swagger-view.png"  alt="swagger-board" min-width="600">
 
   </a>
 </div>
@@ -101,8 +90,7 @@ The Employee Management API is a Java/Spring Boot application designed to facili
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+ Follow these instructions to set up and run the project locally:
 
 ### Prerequisites
 
@@ -112,7 +100,7 @@ Ensure you have the following installed:
 2. [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 3. [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
 
-### Installation / Setup
+### Installation
 
 1. Clone the Repository
 
@@ -120,11 +108,19 @@ Ensure you have the following installed:
 git clone git@github.com:Ch3rryl/cbf-api-employeemgt.git
 cd cbf-api-employeemgt
 ```
+2. Install dependencies
 
+```sh
+./mvnw clean dependency:resolve
+```
+If using Windows:
+```sh
+mvnw clean dependency:resolve
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<!-- USAGE -->
 ## Usage
 
 To start the Employee Management API in VS Code, press `F5` or tap the 'Play' icon for the `cbf-api-employeemgt` app in the Spring Boot Dashboard.
@@ -137,7 +133,7 @@ Alternatively, to start the Employee Management API from the terminal, run the f
 
 Or on Windows:
 
-```cmd
+```sh
 mvnw spring-boot:run
 ```
 
