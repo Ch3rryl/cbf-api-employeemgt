@@ -3,22 +3,18 @@
 <br />
 <div align="center">
   <a href="https://github.com/Ch3rryl/cbf-api-employeemgt">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/Images/HRLogo.jpeg" alt="Logo" width="80" height="80">
+
   </a>
 
-<h3 align="center">Employee Management System</h3>
+<h3 align="center">Employee Management API</h3>
 
   <p align="center">
     Employee management API using Java and Spring boot to handle full CRUD operations.
     <br />
     <a href="https://app.swaggerhub.com/apis/CHERRYL/employee-mgt-api/v0"><strong>Explore the docs »</strong></a>
     <br />
-    <!-- <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a> -->
+
   </p>
 </div>
 
@@ -40,14 +36,14 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <p>Ensure you have the following installed:
+        <p>Ensure you have the following installed:</p>   
 
             1. [JDK 17](https://learn.microsoft.com/en-gb/java/openjdk/download#openjdk-17) (or higher)
             2. [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
             3. [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
 
-</p>     
-<!-- 
+  
+
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -56,7 +52,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li> -->
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -65,7 +61,25 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+The Employee Management API is a Java/Spring Boot application designed to facilitate the management of employee data. This project provides a robust backend infrastructure for handling CRUD (Create, Read, Update, Delete) operations on employee records stored in a JSON file. It leverages the Spring framework for dependency injection and RESTful web service development.
+
+###  Features
+
+<li><b>JSON Repository:</b> Implements an employee repository using JSON file storage, allowing for seamless data persistence.</li>
+<li><b>CRUD Operations:</b> Supports Create, Read, Update, and Delete operations on employee records, providing flexibility in managing employee data.</li>
+<li><b>Search Functionality:</b> Enables searching for employees by name or job title, enhancing usability and efficiency in retrieving relevant employee information.</li>
+<li><b>Exception Handling:</b> Incorporates exception handling to gracefully manage errors and ensure the reliability of the application, enhancing its robustness.</li>
+
+
+
+
+
+<div align="center">
+  <a href="https://github.com/Ch3rryl/cbf-api-employeemgt">
+    <img src="src/Images/swagger-view.png"  alt="swagger-board" min-width="700">
+
+  </a>
+</div>
 
 <!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description` -->
 
@@ -75,14 +89,10 @@
 
 ### Built With
 
-* [![Java][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [Java](https://img.shields.io/badge/Java-<VERSION>-blue)
+* [Spring Boot](https://img.shields.io/badge/Spring%20Boot-<VERSION>-green)
+* [Jackson](https://img.shields.io/badge/Jackson-<VERSION>-orange)
+* [Maven](https://img.shields.io/badge/Maven-<VERSION>-blue)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,32 +106,30 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Ensure you have the following installed:
+
+1. [JDK 17](https://learn.microsoft.com/en-gb/java/openjdk/download#openjdk-17) (or higher)
+2. [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+3. [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
 
 ### Installation / Setup
 
+1. Clone the Repository
 
-    #### 1. Clone the Repository
+```sh
+git clone git@github.com:Ch3rryl/cbf-api-employeemgt.git
+cd cbf-api-employeemgt
+```
 
-    ```sh
-    git clone git@github.com:Ch3rryl/cbf-api-employeemgt.git
-    cd cbf-api-employeemgt
-    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-To start the API in VS Code, press `F5` or tap the 'Play' icon for the `cbf-api-employeemgt` app in the Spring Boot Dashboard.
+To start the Employee Management API in VS Code, press `F5` or tap the 'Play' icon for the `cbf-api-employeemgt` app in the Spring Boot Dashboard.
 
-Alternatively, to start the API from the terminal, run the following command:
+Alternatively, to start the Employee Management API from the terminal, run the following command:
 
 ```sh
 ./mvnw spring-boot:run
