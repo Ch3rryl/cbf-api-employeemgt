@@ -1,3 +1,5 @@
+<a id="readme-top"></a>
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -197,15 +199,38 @@ Open your browser and navigate to `http://localhost:8080`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Testing-->
+## Testing
+
+To verify that the API works as expected, run the `EmployeeTest` tests.
+
+In your terminal, run the following command:
+
+```shell
+./mvnw clean test
+```
+
+If you are using Windows, run this command instead:
+
+```shell
+mvnw.cmd clean test
+```
+
+### Test Results
+
+Your should receive confirmation similar to below (depending on your IDE) once all tests pass:
+
+<div>
+    <img src="src/Images/test-class.png">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Author
 
 👤 **Cherryl Sinclair**
 
 * Github: [@ch3rryl](https://github.com/ch3rryl)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
 
 ***
