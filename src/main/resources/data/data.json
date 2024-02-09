@@ -179,10 +179,10 @@
         "salary": 110000.0,
         "trainingComplete": true
     },
-    "c47fbdf0-4ba1-4d4b-8ceb-5100aede10a5": {
+    "44d74e6a-de37-4a7b-b465-6e8f76d859ac": {
         "name": "Test Name",
-        "jobTitle": "Advisor",
-        "salary": 95000.0,
+        "jobTitle": "IT",
+        "salary": 75000.0,
         "trainingComplete": true
     }
 }
