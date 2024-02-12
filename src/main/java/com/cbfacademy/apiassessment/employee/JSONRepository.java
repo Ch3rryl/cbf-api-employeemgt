@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -135,4 +136,22 @@ public class JSONRepository implements EmployeeRepository {
                 .collect(Collectors.toList());
     }
 
+    // explicit algorithm to find highest salary
+    @Override
+    public double getSalaryMax(List<Employee> employees) {
+    
+        double maxSalary = Double.MIN_VALUE; 
+
+        Iterator<Employee> iterator = employees.iterator();
+        while (iterator.hasNext()) {
+            Employee employee = iterator.next();
+            double salary = employee.getSalary(); 
+            if (salary > maxSalary) {
+                maxSalary = salary;
+            }
+        }
+    
+        return maxSalary;
+    } 
 }
+    

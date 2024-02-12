@@ -15,13 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// import io.swagger.annotations.Api;
-// import io.swagger.annotations.ApiOperation;
+
 
 
 @RestController
 @RequestMapping("/api")
-// @Api(tags = "Employee", description = "Employee Controller")
 public class EmployeeController {
 
     public EmployeeRepository repository; 
@@ -34,13 +32,11 @@ public class EmployeeController {
     // find all employees
     
     @GetMapping("/employees")
-    // @ApiOperation(value = "returns a list of all employees")
     List<Employee> findAll() {
          return repository.findAll();
     }
 
     @GetMapping("/employees/{id}")
-    // @ApiOperation(value = "returns employee details relevant to id searched")
     public ResponseEntity<Employee> findEmployeeById(@PathVariable UUID id) {
         Optional<Employee> employeeOptional = repository.findById(id);
 
@@ -53,7 +49,6 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/name/{name}")
-    // @ApiOperation(value = "returns employee details relevant to name searched")
     public ResponseEntity<Employee> searchByEmployeeName(@PathVariable String name) {
         List<Employee> namedEmployee = repository.searchByEmployeeName(name);
 
@@ -66,22 +61,28 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/jobtitle/{jobTitle}")
-    // @ApiOperation(value = "returns employee details based on job title search")
-    public ResponseEntity<Employee> searchByJobtitle(@PathVariable String jobTitle) {
-        List<Employee> jobTtitleSearched = repository.searchByJobTitle(jobTitle);
+    public ResponseEntity<List<Employee>> searchByJobtitle(@PathVariable String jobTitle) {
+    List<Employee> jobTitleSearched = repository.searchByJobTitle(jobTitle);
 
-        if (!jobTtitleSearched.isEmpty()) {
-            Employee employee = jobTtitleSearched.get(0);
-            return new ResponseEntity<>(employee, HttpStatus.OK);
+        if (!jobTitleSearched.isEmpty()) {
+            return new ResponseEntity<>(jobTitleSearched, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+}
 
+    @GetMapping("/employee/salary/maxsalary") 
+    public ResponseEntity<Double> getSalaryMax() {
+        List<Employee> employees = repository.findAll();
+            double maxSalary = repository.getSalaryMax(employees); 
+
+        return new ResponseEntity<>(maxSalary, HttpStatus.OK);
+       
+   
     }
 
     // create / post new employee details
     @PostMapping("/employees")
-    // @ApiOperation(value = "creates a new employee")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
     Employee savedEmployee = repository.createEmployee(employee);
     return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
@@ -89,7 +90,6 @@ public class EmployeeController {
 
     // update employee details
     @PutMapping("/employees/{id}")
-    // @ApiOperation(value = "updates an existing employee")
     public ResponseEntity<Employee> updateEmployeeDetails(@PathVariable UUID id, @RequestBody Employee employee) {
     Employee updatedEmployee = repository.updateEmployee(id, employee);
     return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
@@ -97,7 +97,6 @@ public class EmployeeController {
 
     // delete employee BY id
     @DeleteMapping("/employees/{id}")
-    // @ApiOperation(value = "deletes an employee")
     public ResponseEntity<String> deleteEmployee(@PathVariable UUID id) {
     repository.deleteEmployee(id);
     return new ResponseEntity<String>("Ok", HttpStatus.OK); 
