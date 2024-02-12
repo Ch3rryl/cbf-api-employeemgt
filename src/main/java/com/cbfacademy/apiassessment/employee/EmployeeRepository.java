@@ -25,4 +25,7 @@ public interface EmployeeRepository extends RepositoryA<Employee, UUID>  {
 
     List<Employee> searchByJobTitle(String jobTitle); 
 
+    double getSalaryMax(List<Employee> employees);
+  
+
 }
