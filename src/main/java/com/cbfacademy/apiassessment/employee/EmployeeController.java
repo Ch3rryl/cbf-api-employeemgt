@@ -49,12 +49,11 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/name/{name}")
-    public ResponseEntity<Employee> searchByEmployeeName(@PathVariable String name) {
+    public ResponseEntity<List<Employee>> searchByEmployeeName(@PathVariable String name) {
         List<Employee> namedEmployee = repository.searchByEmployeeName(name);
 
         if (!namedEmployee.isEmpty()) {
-            Employee employee = namedEmployee.get(0); // first employee if multiple
-            return new ResponseEntity<>(employee, HttpStatus.OK);
+            return new ResponseEntity<>(namedEmployee, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -62,7 +61,7 @@ public class EmployeeController {
 
     @GetMapping("/employees/jobtitle/{jobTitle}")
     public ResponseEntity<List<Employee>> searchByJobtitle(@PathVariable String jobTitle) {
-    List<Employee> jobTitleSearched = repository.searchByJobTitle(jobTitle);
+        List<Employee> jobTitleSearched = repository.searchByJobTitle(jobTitle);
 
         if (!jobTitleSearched.isEmpty()) {
             return new ResponseEntity<>(jobTitleSearched, HttpStatus.OK);
@@ -77,7 +76,6 @@ public class EmployeeController {
             double maxSalary = repository.getSalaryMax(employees); 
 
         return new ResponseEntity<>(maxSalary, HttpStatus.OK);
-       
    
     }
 
@@ -95,7 +93,7 @@ public class EmployeeController {
     return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
 }
 
-    // delete employee BY id
+    // delete employee by id
     @DeleteMapping("/employees/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable UUID id) {
     repository.deleteEmployee(id);
